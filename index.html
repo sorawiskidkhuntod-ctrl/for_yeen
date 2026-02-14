@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine day kub ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: #ff9acb;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100dvh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title */
+h1 {
+    color: white;
+    text-shadow: 4px 4px #ff4d88;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Button */
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding: 14px 18px;
+    border: 4px solid #ff4d88;
+    background: white;
+    color: #ff4d88;
+    cursor: pointer;
+    box-shadow: 6px 6px #ff4d88;
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: white;
+    padding: 25px;
+    border: 6px solid #ff4d88;
+    box-shadow: 8px 8px #ff4d88;
+    transition: transform 0.3s ease;
+    width: 90%;
+    max-width: 320px;
+}
+
+.popup.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h2 {
+    color: #ff4d88;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.popup p {
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>💗 HAPPY VALENTINE 💗</h1>
+
+<button onclick="showLove()">เค้ามีอะไรจะบอก...</button>
+
+<div id="overlay" onclick="closePopup()"></div>
+
+<div class="popup" id="lovePopup">
+    <h2>💖 เค้ารักที่รักนะ 💖</h2>
+    <p>มีเซอร์ไพรส์ในปุ่มข้างล่าง</p>
+    <button onclick="openSong()">กดตรงนี้!!</button>
+</div>
+
+<script>
+function showLove(){
+    document.getElementById("overlay").style.display = "block";
+    let popup = document.getElementById("lovePopup");
+    popup.style.display = "block";
+
+    setTimeout(function(){
+        popup.classList.add("show");
+    }, 50);
+}
+
+function closePopup(){
+    document.getElementById("overlay").style.display = "none";
+    let popup = document.getElementById("lovePopup");
+    popup.classList.remove("show");
+
+    setTimeout(function(){
+        popup.style.display = "none";
+    }, 300);
+}
+
+function openSong(){
+    window.open("https://www.youtube.com/watch?v=gg_6eVaw52o", "_blank");
+}
+</script>
+
+</body>
+</html>
